@@ -9,7 +9,7 @@
   </div>
   <div class="pane">
     <h1> Create a New form</h1>
-    <form id="create-form" action="" method="">
+    <form id="create-form" action="/form" method="POST">
       <button id="form-submit-btn">Submit</button>
     </form>
   </div>
@@ -32,10 +32,10 @@
 
     label.setAttribute("type", "text");
     label.setAttribute("placeholder", "label");
-    label.setAttribute("name", "label_" + i);
+    label.setAttribute("name", "fieldLabel_" + i);
     label.classList.add("labels");
     inputType.setAttribute("type", "text");
-    inputType.setAttribute("name", "inputType_" + i);
+    inputType.setAttribute("name", "fieldType_" + i);
     inputType.value = field;
     inputType.readOnly = true;
     inputType.classList.add("inputTypes");
