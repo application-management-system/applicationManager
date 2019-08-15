@@ -1,0 +1,50 @@
+<% include ../partials/header %>
+
+<div class="form-new">
+  <div class="pane">
+    <button id="text-input-btn" onclick="addField('text input')">Text Input</button>
+    <button id="text-area-btn" onclick="addField('text area')">Text Area</button>
+    <button id="checkbox-btn" onclick="addField('checkbox')">Checkbox</button>
+    <button id="radio-btn" onclick="addField('radio')">Radio</button>
+  </div>
+  <div class="pane">
+    <h1> Create a New form</h1>
+    <form id="create-form" action="" method="">
+      <button id="form-submit-btn">Submit</button>
+    </form>
+  </div>
+</div>
+
+<script>
+  var i = 0; /* Set Global Variable i */
+  function increment() {
+    i += 1;
+  }
+
+  function addField(field) {
+    var form = document.getElementById("create-form");
+    var submitBtn = document.getElementById("form-submit-btn");
+
+    var container = document.createElement("span");
+    var label = document.createElement("input");
+    var inputType = document.createElement("input");
+    increment();
+
+    label.setAttribute("type", "text");
+    label.setAttribute("placeholder", "label");
+    label.setAttribute("name", "label_" + i);
+    label.classList.add("labels");
+    inputType.setAttribute("type", "text");
+    inputType.setAttribute("name", "inputType_" + i);
+    inputType.value = field;
+    inputType.readOnly = true;
+    inputType.classList.add("inputTypes");
+
+    container.appendChild(label);
+    container.appendChild(inputType);
+    container.setAttribute("id", "id_" + i);
+    container.classList.add("fields")
+    form.insertBefore(container, submitBtn);
+  }
+</script>
+<% include ../partials/footer %>

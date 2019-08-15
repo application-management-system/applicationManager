@@ -1,8 +1,28 @@
-body {
+/* body {
   padding: 50px;
   font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
 }
 
 a {
   color: #00B7FF;
+} */
+
+.add-field {
+  display: flex;
+}
+
+.add-field div, .add-field button {
+  margin-left: 8px;
+}
+
+.form-new {
+  display: flex;
+}
+
+.pane {
+  width: 50%;
+}
+
+.fields {
+  display: flex;
 }
