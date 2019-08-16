@@ -1,4 +1,7 @@
 language: node_js
+node_js:
+  # Node 10.3+ includes npm@6 which has good "npm ci" command
+  - 10.8
 deploy:
   provider: heroku
   app: inclusion-app-manager
@@ -7,16 +10,23 @@ deploy:
 addons:
   apt:
     packages:
-      # Ubuntu 16+ does not install this dependency by default, so we need to install it ourselves
       - libgconf-2-4
+
 cache:
-  # Caches $HOME/.npm when npm ci is default script command
-  # Caches node_modules in all other cases
-  npm: true
+  # cache both npm modules and Cypress binary
   directories:
-    # we also need to cache folder with Cypress binary
+    - ~/.npm
     - ~/.cache
-install:
-  - npm install
-script:
-  - $(npm bin)/cypress run --record
+  override:
+    - npm ci
+    - npm run cy:verify
+
+defaults: &defaults
+  script:
+    #   ## print all Travis environment variables for debugging
+    - $(npm bin)/print-env TRAVIS
+    - npm run start:ci &
+    - npm run cy:run -- --record --parallel --group $STAGE_NAME
+    # after all tests finish running we need
+    # to kill all background jobs (like "npm start &")
+    - kill $(jobs -p) || true
