@@ -5,13 +5,20 @@
     <title>Application Manager</title>
 
     <link rel="stylesheet" type="text/css" href="/stylesheets/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="/stylesheets/froala.min.css">
     <link rel="stylesheet" type="text/css" href="/stylesheets/style.css">
   </head>
   <body>
-    <nav class="navbar bg-dark mb-5">
+    <nav class="navbar landing-bg mb-5">
       <div class="container-fluid">
-        <div class="navbar-header">
-          <a class="navbar-brand" href="/">Application Manager</a>
-        </div>
+        <a class="navbar-brand" href="/">Application Manager</a>
+        <ul class="nav navbar-right">
+          <% if(currentUser) { %>
+            <li class="nav-item">
+              <a class="nav-link" href="#">Signed In As <%= currentUser.username %></a>
+            </li>
+            <li class="nav-item"><a class="nav-link" href="/logout">Logout</a></li>
+          <% } %>
+        </ul>
       </div>
     </nav>

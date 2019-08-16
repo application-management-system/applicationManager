@@ -7,6 +7,10 @@ a {
   color: #00B7FF;
 } */
 
+html, body {
+  height: 100%;
+}
+
 .add-field {
   display: flex;
 }
@@ -25,4 +29,13 @@ a {
 
 .fields {
   display: flex;
+}
+
+.auth-btn, .landing-bg, .form-btn {
+  background-color: #ff6347;
+  color: #ffffff;
+}
+
+a.navbar-brand, a.nav-link {
+  color: #ffffff;
 }

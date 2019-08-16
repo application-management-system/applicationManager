@@ -1,9 +1,32 @@
-<% include partials/header %>
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>Application Manager</title>
 
-<h1>Landing Page!</h1>
-
-<p>Welcome to Application Manager</p>
-
-<a href="/form">View All Forms</a>
+    <link rel="stylesheet" type="text/css" href="/stylesheets/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="/stylesheets/style.css">
+  </head>
+  <body class="bg-light">
+    <nav class="navbar landing-bg mb-5">
+      <div class="container-fluid">
+        <a class="navbar-brand" href="/">Application Manager</a>
+      </div>
+    </nav>
+    <div class="container-fluid align-items-center justify-content-center d-flex">
+      <div class="row align-items-center text-left">
+        <div class="col-6">
+          <img alt="image" class="img-fluid" src="login.svg">
+        </div>
+        <div class="col-6 ml-auto pt-5 pt-lg-0">
+          <h1>Application Manager</h1>
+          <p class="lead">Even the all-powerful Pointing has no control about the blind texts it is an almost unorthographic life One day however a small line of blind text by the name of Lorem Ipsum decided to leave for the far World of Grammar.</p>
+          <p class="mt-4">
+            <a href="/register" class="btn auth-btn">Signup</a>
+            <a href="/login" class="btn auth-btn">Login</a>
+          </p>
+        </div>
+      </div>
+    </div>
 
 <% include partials/footer %>
