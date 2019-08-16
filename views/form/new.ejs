@@ -1,17 +1,19 @@
 <% include ../partials/header %>
 
-<div class="form-new">
-  <div class="pane">
-    <button id="text-input-btn" onclick="addField('text input')">Text Input</button>
-    <button id="text-area-btn" onclick="addField('text area')">Text Area</button>
-    <button id="checkbox-btn" onclick="addField('checkbox')">Checkbox</button>
-    <button id="radio-btn" onclick="addField('radio')">Radio</button>
-  </div>
-  <div class="pane">
-    <h1> Create a New form</h1>
-    <form id="create-form" action="" method="">
-      <button id="form-submit-btn">Submit</button>
-    </form>
+<div class="container form-new">
+  <div class="row">
+    <div class="col-6">
+      <button class="btn btn-lg form-btn m-2" id="text-input-btn" onclick="addField('text input')">Text Input</button>
+      <button class="btn btn-lg form-btn m-2" id="text-area-btn" onclick="addField('text area')">Text Area</button>
+      <button class="btn btn-lg form-btn m-2" id="checkbox-btn" onclick="addField('checkbox')">Checkbox</button>
+      <button class="btn btn-lg form-btn m-2" id="radio-btn" onclick="addField('radio')">Radio</button>
+    </div>
+    <div class="col-6">
+      <h1> Create a New form</h1>
+      <form id="create-form" action="/form" method="POST">
+        <button id="form-submit-btn">Submit</button>
+      </form>
+    </div>
   </div>
 </div>
 
@@ -32,10 +34,10 @@
 
     label.setAttribute("type", "text");
     label.setAttribute("placeholder", "label");
-    label.setAttribute("name", "label_" + i);
+    label.setAttribute("name", "fieldLabel_" + i);
     label.classList.add("labels");
     inputType.setAttribute("type", "text");
-    inputType.setAttribute("name", "inputType_" + i);
+    inputType.setAttribute("name", "fieldType_" + i);
     inputType.value = field;
     inputType.readOnly = true;
     inputType.classList.add("inputTypes");
