@@ -3,19 +3,31 @@
   "version": "0.0.0",
   "private": true,
   "scripts": {
-    "start": "node ./bin/www"
+    "start": "node ./bin/www",
+    "cy:run": "cypress run",
+    "test": "start-server-and-test start http://localhost:3000 cy:run"
   },
   "dependencies": {
     "body-parser": "^1.19.0",
+    "compression": "^1.7.4",
+    "connect-session-sequelize": "^6.0.0",
     "cookie-parser": "~1.4.4",
     "debug": "~2.6.9",
     "ejs": "^2.6.2",
     "express": "~4.16.1",
+    "express-session": "^1.16.2",
     "http-errors": "~1.6.3",
     "morgan": "~1.9.1",
+    "pg": "^7.12.1",
     "pug": "^2.0.4"
   },
   "devDependencies": {
-    "cypress": "^3.4.1"
+    "cypress": "^3.4.1",
+    "passport": "^0.4.0",
+    "passport-google-oauth": "^2.0.0",
+    "pg-hstore": "^2.3.3",
+    "pug": "^2.0.4",
+    "sequelize": "^5.15.0",
+    "socket.io": "^2.2.0"
   }
 }
