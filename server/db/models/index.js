@@ -1,5 +1,5 @@
 const User = require('./user')
-const Form = require('./forms')
+const Form = require('./form')
 
 
 Form.belongsToMany(User)
